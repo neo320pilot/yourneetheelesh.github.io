@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Neetheelesh Ramkissoon — Eagle 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+/* HERO */
+.hero {
+  background: #111111;
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 24px 80px;
+  border-bottom: 4px solid #111111;
+}
+
+.callsign-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.05;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: #cccccc;
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #aaaaaa;
+  margin-top: 16px;
+  letter-spacing: 0.06em;
+}
+
+.hero-rule {
+  width: 50px;
+  height: 2px;
+  background: #ffffff;
+  margin: 28px auto;
+}
+
+.hero-born {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 28px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: #111111;
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.body-text {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.9;
+}
+
+.body-text p + p { margin-top: 14px; }
+
+/* QUOTE */
+.quote-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 28px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  color: #111111;
+  line-height: 1.65;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  color: #cccccc;
+  line-height: 0.5;
+  margin-bottom: 16px;
+}
+
+/* AIRCRAFT GRID */
+.aircraft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border: 1px solid #111111;
+  margin-top: 28px;
+}
+
+.ac-cell {
+  padding: 24px 14px;
+  text-align: center;
+  border-right: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+}
+
+.ac-cell:last-child { border-right: none; }
+
+.ac-type {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #111111;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.ac-name {
+  font-size: 0.68rem;
+  color: #777777;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ac-cell.fav {
+  background: #111111;
+}
+
+.ac-cell.fav .ac-type { color: #ffffff; }
+.ac-cell.fav .ac-name { color: #aaaaaa; }
+
+.fav-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 2px 8px;
+}
+
+/* PILLARS */
+.pillars {
+  display: flex;
+  border: 1px solid #111111;
+  margin-top: 28px;
+}
+
+.pillar {
+  flex: 1;
+  padding: 24px 14px;
+  text-align: center;
+  border-right: 1px solid #111111;
+}
+
+.pillar:last-child { border-right: none; }
+
+.pillar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: #111111;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.pillar-sub {
+  font-size: 0.68rem;
+  color: #777777;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* VEDIC PANEL */
+.vedic-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 28px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vedic-box {
+  border: 2px solid #111111;
+  padding: 40px 32px;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.vedic-icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #111111;
+  flex-shrink: 0;
+}
+
+.vedic-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.vedic-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 12px;
+}
+
+.vedic-body {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.85;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #111111;
+  color: #888888;
+}
+
+.footer-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #aaaaaa;
+}
+
+.footer-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #666666;
+  margin-top: 6px;
+}
+
+@media (max-width: 560px) {
+  .vedic-box { grid-template-columns: 1fr; }
+  .pillars { flex-direction: column; }
+  .pillar { border-right: none; border-bottom: 1px solid #111111; }
+  .pillar:last-child { border-bottom: none; }
+  .ac-cell { border-right: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="callsign-tag">Callsign &nbsp;·&nbsp; Eagle 1</p>
+  <h1 class="hero-name">Neetheelesh <em>(Prahlad)</em><br>Ramkissoon</h1>
+  <p class="hero-sub">Aviator &nbsp;·&nbsp; Test Pilot &nbsp;·&nbsp; Air Accident Investigator</p>
+  <div class="hero-rule"></div>
+  <p class="hero-born">Born 13 April 1980 &nbsp;·&nbsp; Fond du Sac, Mauritius</p>
+</div>
+
+<!-- ORIGINS -->
+<div class="section">
+  <p class="label">The Beginning</p>
+  <h2 class="section-title">From the Island of Mauritius<br>to the Skies of Ireland</h2>
+  <div class="body-text">
+    <p>Neetheelesh Ramkissoon was born on the 13th of April, 1980, in the coastal suburb of Fond du Sac, Mauritius — a place of warm trade winds and open horizons that would quietly shape the trajectory of his life. From an early age, the sky was not a boundary but a beckoning.</p>
+    <p>His formal flight training began at Western Airport, Dublin, Ireland, where he earned his wings and took his first decisive steps into professional aviation. It was here that a lifelong calling was confirmed — not merely as a profession, but as a way of being.</p>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">He has crossed oceans alone at the controls of a Cessna 172 — adventures that were as breathtaking as they were humbling.</p>
+</div>
+
+<!-- ADVENTURES -->
+<div class="section">
+  <p class="label">The Journey</p>
+  <h2 class="section-title">Crossing Oceans,<br>Delivering Wings</h2>
+  <div class="body-text">
+    <p>Upon obtaining his licence, Neetheelesh embarked on one of aviation's most demanding and storied pursuits — the delivery of light aircraft across the globe. Flying a Cessna 172, he navigated vast stretches of open ocean, remote coastlines, and unfamiliar airspace, threading his way across continents with little more than skill, preparation, and unwavering resolve.</p>
+    <p>The experiences were extraordinary — marked by moments of profound beauty and, at times, genuine peril. Each crossing deepened his mastery of the aircraft, sharpened his situational awareness, and forged the character of a pilot who had truly earned his place in the sky. His passion for flying, and the depth of experience he accumulated across those years, became well known among those who shared his world.</p>
+  </div>
+</div>
+
+<!-- AIRCRAFT -->
+<div class="section">
+  <p class="label">Type Ratings &amp; Experience</p>
+  <h2 class="section-title">Aircraft Flown</h2>
+  <div class="body-text">
+    <p>Over the course of a distinguished career, Neetheelesh has accumulated type ratings and extensive flight time across some of the most respected commercial aircraft in the world — from narrow-body workhorses to wide-body long-haul jets.</p>
+  </div>
+  <div class="aircraft-grid">
+    <div class="ac-cell"><div class="ac-type">A319</div><div class="ac-name">Airbus · Narrow-body</div></div>
+    <div class="ac-cell"><div class="ac-type">A320</div><div class="ac-name">Airbus · Narrow-body</div></div>
+    <div class="ac-cell"><div class="ac-type">A330</div><div class="ac-name">Airbus · Wide-body</div></div>
+    <div class="ac-cell"><div class="ac-type">B737</div><div class="ac-name">Boeing · Narrow-body</div></div>
+    <div class="ac-cell"><div class="ac-type">B747</div><div class="ac-name">Boeing · Queen of the Skies</div></div>
+    <div class="ac-cell fav"><div class="ac-type">Metroliner</div><div class="ac-name">Fairchild Swearingen</div><div class="fav-badge">Favourite Aircraft</div></div>
+  </div>
+</div>
+
+<!-- AIR ACCIDENT INVESTIGATION -->
+<div class="section">
+  <p class="label">Qualification</p>
+  <h2 class="section-title">Air Accident<br>Investigation</h2>
+  <div class="body-text">
+    <p>Beyond the cockpit, Neetheelesh holds a qualification in Air Accident Investigation — a discipline that demands the same precision and analytical rigour that has defined his flying career. This certification reflects a deep commitment not only to the art of flight, but to the science of understanding it at its most critical moments.</p>
+    <p>Trained to examine the technical, human, and environmental factors that converge in aviation incidents, he brings a rare perspective to safety — that of a qualified investigator who has also sat in the seat, crossed oceans, and understood firsthand the weight of decisions made in the air.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-title">Accident Analysis</div><div class="pillar-sub">Technical &amp; Causal</div></div>
+    <div class="pillar"><div class="pillar-title">Human Factors</div><div class="pillar-sub">Crew &amp; Decision-Making</div></div>
+    <div class="pillar"><div class="pillar-title">Safety Systems</div><div class="pillar-sub">Investigation &amp; Reporting</div></div>
+  </div>
+</div>
+
+<!-- VEDIC MIND -->
+<div class="vedic-wrap">
+  <div class="vedic-box">
+    <div class="vedic-icon">ॐ</div>
+    <div>
+      <p class="vedic-label">Beyond the Cockpit</p>
+      <h3 class="vedic-title">The Vedic Mind</h3>
+      <p class="vedic-body">In recent times, Neetheelesh has channelled another dimension of his journey into a new creative endeavour — <strong>The Vedic Mind</strong>, a podcast dedicated to exploring the timeless wisdom of Vedic philosophy and its relevance in the modern world. Grounded in ancient knowledge and spoken with the clarity of a man who has lived at the edge of the sky, the podcast invites listeners to reflect, question, and seek deeper understanding. <em>Ancient wisdom. Modern consequence.</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Neetheelesh ( Prahlad ) Ramkissoon</p>
+  <p class="footer-sub">Eagle 1 &nbsp;·&nbsp; Fond du Sac, Mauritius &nbsp;·&nbsp; Est. 1980</p>
+</footer>
+
+</body>
+</html>
